@@ -1,0 +1,9 @@
+#+TITLE: Tidal Club Course
+
+* Week #1
+** DONE [[https://club.tidalcycles.org/t/technical-tour-of-a-tidal-system/147][Technical tour of a tidal system]]
+** DONE [[https://club.tidalcycles.org/t/week-1-lesson-1-tidal-interaction/230][#1 Tidal Interaction]]
+** DONE [[https://club.tidalcycles.org/t/week-1-lesson-2-loading-sample-packs/341][#2 Loading sample packs]]
+** DONE [[https://club.tidalcycles.org/t/week-1-lesson-3-sequencing-with-the-mini-notation/367][#3 Sequencing with mini-notation]] 
+** DONE [[https://club.tidalcycles.org/t/week-1-lesson-4-mini-notation-part-2/416][#4 Mini-notation part 2]] 
+** DONE [[https://club.tidalcycles.org/t/week-1-lesson-5-mini-notation-part-3/449][#5 Mini-notation part 3]]
