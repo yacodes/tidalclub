@@ -7,3 +7,12 @@
 ** DONE [[https://club.tidalcycles.org/t/week-1-lesson-3-sequencing-with-the-mini-notation/367][#3 Sequencing with mini-notation]] 
 ** DONE [[https://club.tidalcycles.org/t/week-1-lesson-4-mini-notation-part-2/416][#4 Mini-notation part 2]] 
 ** DONE [[https://club.tidalcycles.org/t/week-1-lesson-5-mini-notation-part-3/449][#5 Mini-notation part 3]]
+* Week #2
+** DONE [[https://club.tidalcycles.org/t/week-2-lesson-1-starting-out-with-effects/463][#1 Starting out with effects]]
+** DONE [[https://club.tidalcycles.org/t/week-2-lesson-2-manipulating-time-with-setcps-cps-patterns-and-fast-slow-functions/466][#2 Manipulating time with setcps, cps patterns and fast/slow functions]]
+** DONE [[https://club.tidalcycles.org/t/week-2-lesson-3-combining-patterns-with-arithmetic-plus-the-hurry-function/489][#3 Combining patterns with arithmetic, plus the ‘hurry’ function]]
+* Week #3
+** DONE [[https://club.tidalcycles.org/t/week-3-lesson-1-exploring-the-every-function-including-tackling-the-meaning-of/502][#1 Exploring the ‘every’ function, including tackling the meaning of ‘$’]]
+** DONE [[https://club.tidalcycles.org/t/week-3-lesson-2-cut-vs-legato/515][#2 Cut vs legato]]
+** DONE [[https://club.tidalcycles.org/t/week-3-lesson-3-slice-and-splice/519][#3 Slice and splice]]
+** DONE [[https://club.tidalcycles.org/t/week-3-lesson-4-chop-and-striate/534][#4 Chop and striate]]

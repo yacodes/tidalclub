@@ -1,0 +1,98 @@
+-- #1 Starting out with effects
+-- https://club.tidalcycles.org/t/week-2-lesson-1-starting-out-with-effects/463
+
+d1 $ n "0 4 [3 4] 3" # s "sn" # vowel "[o i u a e y]"
+
+d1 $ n "0 4 [3 4] 3" # s "sn" # speed "1 2 3 4 1.5"
+
+d1 $ n "0 4 [3 4] 3" # s "sn" # crush 4
+
+d1 $ n "0 0 [3 4] 3" # s "bd" # crush "4 16" -- only first half is distorted, patterns are combined
+
+d1 $ s "drum*8" # djf 0.8
+
+hush
+
+-- #2 manipulating time with setcps, cps patterns and fast/slow functions
+-- https://club.tidalcycles.org/t/week-2-lesson-2-manipulating-time-with-setcps-cps-patterns-and-fast-slow-functions/466
+
+d1 $ n "0 2 [3 5] [4 7]" # sound "808"
+
+0.5625 -- default cps
+
+135/60/4 -- 135bpm
+
+setcps 0.8 -- set cycles per second
+
+setcps 0.6 -- cycles per second is global
+
+hush
+
+setcps (135/60/4)
+
+d1 $ s "bd*4" # djf 0.1
+
+-- cps as an effect
+
+d1 $ n "0(3, 8) 8*8" # sound "808" # cps 0.7 -- cps is also global
+
+d1 $ n "0(3, 8) 8*8" # sound "808" # cps "1 2"
+
+d1 $ n "0 2 [3 5] [4 7]" # sound "808"
+
+d2 $ n "8(3, 8) 10*8" # sound "808" # cps "0.5 0.75"
+
+d2 $ n "8(3, 8) 10*8" # sound "808" # cps (slow 4 $ saw + 0.5)
+
+-- 'fast' & 'slow' functions
+
+setcps (135/60/4)
+
+d1 $ fast 2 $ n "0 2 [3 5] [4 7]" # sound "808"
+
+d1 $ fast 0.5 $ n "0 2 [3 5] [4 7]" # sound "808"
+
+d1 $ slow 2 $ n "0 2 [3 5] [4 7]" # sound "808"
+
+d1 $ slow (2/3) $ n "0 2 [3 5] [4 7]" # sound "808"
+
+d1 $ fast "0.5 2" $ n "0 2 [3 5] [4 7]" # sound "808"
+
+d1 $ n "<0 [3 5]> [0 2 [3 5] [4 7]]" # sound "808"
+
+hush
+
+-- #3 Combining patterns with arithmetic, plus the ‘hurry’ function
+-- https://club.tidalcycles.org/t/week-2-lesson-3-combining-patterns-with-arithmetic-plus-the-hurry-function/489
+
+d1 $ n "0 1 0 [2 4] 2 4 1*2 3" # s "808"
+
+d1 $ n "0 1 0 [2 4] 2 4 1*2 3" # s "808" # squiz "4 1 3 2"
+
+d1 $ n "0 1 0 [2 4] 2 4 1*2 3" # s "808" # speed "1 2" # speed "1 2 3"
+
+d1 $ speed "1 2 0.5" # s "bass3"
+
+d1 $ speed "1 2 0.5" # s "bass3" # speed "3 4" -- # is a shorthand for |>
+
+d1 $ speed "1 2 0.5" # s "bass3" |> speed "3 4" -- values coming from the right, structure from the left
+
+d1 $ speed "1 2 0.5" # s "bass3" |< speed "3 4" -- values coming from the left: speed "3 4" is doing nothing
+
+d1 $ speed "1 2 0.5" # s "bass3" >| speed "3 4" -- structure is coming from the right: speed "1 2 0.5" is doing nothing
+
+d1 $ speed "1 2 0.5" # s "bass3" <| speed "3 4" -- structure from speed "3 4", values from speed "1 2 0.5"
+
+d1 $ speed "1 2 0.5" # s "bass3" +| speed "3 4" -- structure from right, values speed "1 2 0.5" + speed "3 4" = speed "4 6", 0.5 is dropped
+
+d1 $ speed "1 2 0.5" # s "bass3" |* speed "[1 0.5 3]/3"
+
+d1 $ hurry 0.5 $ n "0 1 0 [2 4] 2 4 1*2 3" # s "808"
+
+d1 $ hurry "<2 [1 0.5]> 1.5" $ n "0 1 0 [2 4] 2 4 1*2 3" # s "808"
+
+d1 $ speed "1 2 0.5" # s "bass3" |*| speed "[1 0.5 3]/3" -- taking structure from both sides
+
+d1 $ speed "1 2 0.5" # s "bass3" * speed "[1 0.5 3]/3" -- same as previous
+
+hush

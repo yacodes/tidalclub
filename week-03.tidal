@@ -1,0 +1,91 @@
+-- #1 Exploring the ‘every’ function, including tackling the meaning of ‘$’
+-- https://club.tidalcycles.org/t/week-3-lesson-1-exploring-the-every-function-including-tackling-the-meaning-of/502
+
+d1 $ s "bd sd ~ cp"
+
+d1 $ fast 2 $ s "bd sd ~ cp"
+
+d1 $ every 3 (fast 2) $ s "bd sd ~ cp" -- fast 2 only for every third cycle
+
+d1 $ every 3 (rev) $ s "bd sd ~ cp"
+
+d1 $ every 3 (# squiz "5") $ s "bd sd ~ cp"
+
+hush
+
+-- #2 Cut vs legato
+-- https://club.tidalcycles.org/t/week-3-lesson-2-cut-vs-legato/515
+
+d1 $ fast 2 $ s "ho:4 hc ho:4 hc"
+
+d1 $ fast 2 $ s "ho:4 hc ho:4 hc" # cut 1 # orbit 1
+
+d2 $ s "bd*8" # cut 1 # orbit 2
+
+hush
+
+-- legato vs cut
+drawLine $ "x(3, 8)"
+
+d1 $ s "sax(3, 8)" # cut 1 -- next sample cuts previous
+
+d1 $ s "sax(3, 8)" # legato 1 -- plays sample only for it's duration in the cycle
+
+hush
+
+
+-- #3 Slice and splice
+-- https://club.tidalcycles.org/t/week-3-lesson-3-slice-and-splice/519
+
+d1 $ s "breaks125:4"
+
+d1 $ splice 8 "0 1 2 3 4 5 6 7" $ s "breaks125:4"
+
+d1 $ splice 8 "7 1 [2 3] ~ 4 1 6*2 7" $ s "breaks125:4"
+
+d1 $ splice 8 (slow "1 2" "7 1 [2 3] ~ 4 1 6*2 7") $ s "breaks125:4"
+
+d1 $ slice 8 (slow "1 2" "7 1 [2 3] ~ 4 1 6*2 7") $ s "breaks125:4" -- do not pitching, so samples can overlap or you can fond gaps between them
+
+d2 $ slice 8 ("0 1 2 3 4 5") $ s "breaks125:4"
+
+d3 $ s "bd sd*2 cp"
+
+setcps (140/60/4)
+
+hush
+
+-- #4 Chop and striate
+-- https://club.tidalcycles.org/t/week-3-lesson-4-chop-and-striate/534
+
+d1 $ s "breaks125" # begin 0.75 # end 1
+
+d1 $ s "breaks125*8" # speed 1 # unit "c" # begin 0.75 # end 1 -- unit "c" changes the behavior of speed
+
+d1 $ loopAt 1 $ chop 4 $ s "breaks125" -- loopAt does the speed calculations for you
+
+d1 $ rev $ loopAt 1 $ chop 4 $ s "breaks125"
+
+d1 $ slow 2 $ loopAt 1 $ chop 4 $ s "breaks125" -- can hear the gaps when slowing
+
+d1 $ slow 2 $ loopAt 1 $ chop 4 $ s "breaks125 breaks125:1" -- plays sample loops one after another
+
+setcps (80/60/4)
+
+d1 $ slow 2 $ loopAt 1 $ striate 4 $ s "breaks125 breaks125:1" -- interlacing sample loops one inside other
+
+d1 $ slow 2 $ loopAt 1 $ striate 16 $ s "breaks125 breaks125:1" -- striate argument cuts sample loops in more small samples
+
+d1 $ slow 4 $ loopAt 1 $ striate 8 $ s "breaks125*4" -- plays every chopped part each after another, stutter effect
+
+hush
+
+d1 $ slow 1 $ loopAt 8 $ striate 16 $ s "bev"
+
+d1 $ slice 32 ("8 [<12 16> <18 14>] <2 28> [<4 32> <12 24>]") $ s "bev" # legato 1
+
+d2 $ s "clubkick*4"
+
+d3 $ s "bass*4" # squiz 1
+
+setcps (120/60/4)
