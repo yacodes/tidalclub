@@ -16,3 +16,5 @@
 ** DONE [[https://club.tidalcycles.org/t/week-3-lesson-2-cut-vs-legato/515][#2 Cut vs legato]]
 ** DONE [[https://club.tidalcycles.org/t/week-3-lesson-3-slice-and-splice/519][#3 Slice and splice]]
 ** DONE [[https://club.tidalcycles.org/t/week-3-lesson-4-chop-and-striate/534][#4 Chop and striate]]
+* Week #4
+** DONE [[https://club.tidalcycles.org/t/week-4-lesson-1-continuous-patterns-sine-square-tri-saw-and-random-functions/608][#1 Continuous patterns - sine, square, tri, saw and random functions]]

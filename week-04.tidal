@@ -1,0 +1,40 @@
+-- #1 Continuous patterns - sine, square, tri, saw and random functions
+-- https://club.tidalcycles.org/t/week-4-lesson-1-continuous-patterns-sine-square-tri-saw-and-random-functions/608
+
+d1 $ s "bd*8" # speed (sine + 0.5)
+
+d1 $ s "bd*8" # speed (range 0.5 1.5 sine)
+
+d1 $ speed (range 0.5 2.5 sine) # s "bd" -- nothing happens, because sine doesn't triggering any events
+
+d1 $ speed (segment 16 $ range 0.5 2.5 sine) # s "bd" -- create regular interval for 16 events
+
+d1 $ speed (struct "t(7, 16)" $ range 0.5 2.5 sine) # s "bd"
+
+d1 $ speed (struct "f(7, 16)" $ range 0.5 2.5 sine) # s "bd" -- inverse euclidian pattern
+
+d1 $ speed (struct "<f t>(7, 16)" $ range 0.5 2.5 sine) # s "bd"
+
+d1 $ s "bd*8" # speed (slow 2 $ range 0.5 1.5 sine)
+
+d1 $ jux rev $ s "bd*32" # speed (iter 4 $ range 0.5 1.5 sine)
+
+d1 $ s "bd*32" # speed (range 0.5 2.5 square)
+
+d1 $ s "bd*32" # speed (range 0.5 2.5 tri)
+
+d1 $ s "bd*32" # speed (range 0.5 2.5 saw)
+
+d1 $ s "bd*32" # room 0.6 # sz (slow 4 saw)
+
+d1 $ s "bd*32" # room 0.6 # sz (slow 4 saw)
+
+d1 $ s "bd*32" # speed (range 0.5 2.5 (sine * (slow 2 tri)))
+
+d1 $ s "bd*8" # speed rand
+
+d1 $ s "bd*8" # speed (rand + 1)
+
+d1 $ s "bd*8" # speed (range 1 3 perlin)
+
+hush
