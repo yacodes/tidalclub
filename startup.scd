@@ -9,8 +9,6 @@
     ~dirt = SuperDirt(2, s);
     ~dirt.loadSoundFiles;
     s.sync;
-    ~dirt.start(57120, 24.collect({0}));
+    ~dirt.start(48000, 24.collect({0}));
   };
-
-  s.latency = 0.01;
 )

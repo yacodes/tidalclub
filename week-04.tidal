@@ -7,7 +7,7 @@ d1 $ s "bd*8" # speed (range 0.5 1.5 sine)
 
 d1 $ speed (range 0.5 2.5 sine) # s "bd" -- nothing happens, because sine doesn't triggering any events
 
-d1 $ speed (segment 16 $ range 0.5 2.5 sine) # s "bd" -- create regular interval for 16 events
+d1 $ speed (segment 16 $ range 0.5 2.5 sine) # s "bd" -- create regular interval for 16 nevents
 
 d1 $ speed (struct "t(7, 16)" $ range 0.5 2.5 sine) # s "bd"
 
@@ -85,5 +85,90 @@ d1 $ s "bd*8" # squiz (wchoose [(1, 2), (4, 0.1), (10, 0.5)])
 d1 $ s "bd*8" # pan rand # speed (range 1 3 $ rand) -- panning is getting the same random numbers: they are in the same random stream
 
 d1 $ s "bd*8" # pan rand # speed (fast 1.01 $ range 1 3 $ rand) -- random streams are different, because of speeding speed stream up
+
+hush
+  
+-- #3 Random marathon part 2: randcat, stripe, degrade, sometimes, someCycles, randslice + more
+-- https://club.tidalcycles.org/t/week-4-lesson-3-random-marathon-part-2-randcat-stripe-degrade-sometimes-somecycles-randslice-more/690
+
+-- randcat
+d1 $ s (cat ["bd sn", "arpy cp"])
+
+d1 $ s (randcat ["bd sn", "arpy cp", "808ht(5, 8)"])
+
+d1 $ s "bin*8" # vowel (randcat ["a e i", "e o u"])
+
+-- wrandcat
+d1 $ s (wrandcat [("bd sn", 0.5),
+                  ("arpy cp", 0.5),
+                  ("bin(7,8)", 0.25)])
+
+
+
+-- stripe
+
+d1 $ stripe 2 $ n "0*2 3 ~ 4 2 4 3 1" # s "808"
+
+drawLine "0*2 3 ~ 4 2 4 3 1"
+
+drawLineSz (128 + 64)
+  $ superimpose (const $ "0*2 3 ~ 4 2 4 3 1")
+  $ stripe 2 $ "0*2 3 ~ 4 2 4 3 1"
+  
+hush
+
+-- degrade
+
+d1 $ s "bd*8?"
+
+d1 $ degrade $ s "bd*8" -- same as above
+
+hush
+
+-- degradeBy
+
+d1 $ s "bd*8?0.6"
+
+d1 $ degradeBy 0.6 $ s "bd*8" -- same as above
+
+hush
+
+-- sometimes
+
+d1 $ sometimes rev $ n "0 ~ 3 1 5 2 ~ 5" # s "808"
+
+d1 $ sometimes (# squiz 4) $ n "0 ~ 3 1 5 2 ~ 5" # s "808"
+
+hush
+
+-- sometimesBy
+
+d1 $ sometimesBy 0.9 (# squiz 4) $ n "0 ~ 3 1 5 2 ~ 5" # s "808"
+
+hush
+
+-- somecycles
+-- making decision not for every event, but for the whole cycle
+d1 $ somecycles (# squiz 4) $ n "0 ~ 3 1 5 2 ~ 5" # s "808"
+
+hush
+
+-- somecyclesBy
+-- making decision not for every event, but for the whole cycle
+d1 $ somecyclesBy 0.75 (# squiz 4) $ n "0 ~ 3 1 5 2 ~ 5" # s "808"
+
+hush
+
+-- randslice
+
+d1 $ slice 4 "0 3 3 ~" $ sound "breaks125" -- slicing the breakbeat
+
+d1 $ randslice 4 $ sound "breaks125" -- randslice plays quarter for the break
+
+d1 $ loopAt 1 $ fast 4 $ randslice 4 $ sound "breaks125" -- randslice plays quarter for the break
+
+d1 $ slice 8 (segment 8 $ irand 8) $ sound "breaks125" -- can be implemented with slice + rand
+
+d1 $ splice 8 (segment 8 $ irand 8) $ sound "breaks125"
 
 hush

@@ -4,7 +4,7 @@
 
 import Sound.Tidal.Context
 
-tidal <- startTidal (superdirtTarget {oLatency = 0.01, oAddress = "127.0.0.1", oPort = 57120}) (defaultConfig {cFrameTimespan = 1/20})
+tidal <- startTidal (superdirtTarget {oLatency = 0.2, oAddress = "127.0.0.1", oPort = 48000}) (defaultConfig {cFrameTimespan = 1/20})
 
 -- Defaults
 let p = streamReplace tidal

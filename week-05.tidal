@@ -1,0 +1,63 @@
+-- #1 Musical notes
+-- https://club.tidalcycles.org/t/week-5-lesson-1-musical-notes/891
+
+d1 $ note "4 5 6 7" # s "superpiano" -- must be rounded
+
+note "3"
+
+d1 $ note "12.3 12.4 12.5 12.6" # s "supermandolin" -- can be float, because of the mandolin
+
+note "~ 3 ~"
+
+note "~ 3 5" # shape "{0.2 0.4}%3" -- shows all states
+
+note "c g a e"
+
+d1 $ note "c g a e" # s "superpiano"
+
+d1 $ qtrigger 1 $ note "c g a e" # s "superpiano" -- reset cycles with qtrigger
+
+d1 $ trigger 1 $ note "c g a e" # s "superpiano" -- or unquantized
+
+note "a b c d e f g"
+
+-- same as the
+
+note "9 11 0 2 4 5 7" 
+
+note "cs ds fs gs as" -- s stands for sharp
+
+note "df ef gf af bf" -- f stands for flat
+
+d1 $ note "csssss g" # s "superpiano" -- can add more than one sharp (but why?)
+
+note "c5 c6 c4 c6" -- octaves
+
+d1 $ n "c a f e" # s "superpiano"
+
+-- same as
+
+d2 $ note "c a f e" # s "superpiano" # gain 0.8
+
+-- ~n~ & ~note~ behaves differently for samples
+
+d1 $ note "c a f e" # s "bass:1" -- playback of the sound, with right noting
+
+-- same as
+
+d1 $ speed "1 1.6 1.3" # s "bass"
+
+d1 $ n "c a f e" # s "sf" -- samples selection
+
+d1 $ note "c a f e" # s "sf" -- speed selection, but with note respect
+
+d1 $ up "c a f e" # s "sf" -- same as the above (note)
+  
+hush
+
+d1 $ n "c a f e" # s "superpiano" # octave "6" -- change octave control
+
+hush
+
+-- #2 Chords, arpeggios and.. Algoraoke
+-- https://club.tidalcycles.org/t/week-5-lesson-2-chords-arpeggios-and-algoraoke/913/23
