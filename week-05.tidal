@@ -154,3 +154,12 @@ pF "dtune" "<1 0.2>" -- patterning custom SynthDef parameters
 dtune = pF "dtune" -- alias, put in BootTidal
 
 hush
+
+-- #3.2 Creating SuperDirt synths
+-- https://club.tidalcycles.org/t/week-5-lesson-3-superdirt-synths-part-2/1193
+
+d1 $ n "e3 [~ e3@3 e3@6] e3 a3" # s "moog" # legato 1
+
+d1 $ n "e3 [~ e4 g5 e3] [f3 a3 f3] [g3 g3]" # s "test" |+ n 12
+
+hush

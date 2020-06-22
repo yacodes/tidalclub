@@ -46,3 +46,23 @@ SynthDef(\bass8, {
 
 }).add;
 )
+
+(
+SynthDef(\test, {
+	| sustain = 1, freq = 440, speed = 1, begin = 0, end = 1,
+	  clamp, accelerate, offset, pan, out |
+	var line, env, volume, tone, outAudio;
+
+	freq = freq * speed; // Imitating sample
+	line = Line.ar(begin, end, sustain / speed, doneAction: Done.freeSelf);
+	env = Env.new(levels: [0, 1, 0.9, 0], times: [0.1, 0.5, 1], curve: [-5, 0, -5]);
+	volume = IEnvGen.ar(env, line);
+	tone = (
+		Pulse.ar(freq, line) +
+		Pulse.ar(freq * 1.02, line) +
+		Pulse.ar(freq * 0.98, line)
+	) / 3; // Detuning
+	outAudio = RLPF.ar(tone * volume, 20000*clamp*volume, 0.3);
+	OffsetOut.ar(out, DirtPan.ar(outAudio, ~dirt.numChannels, pan, volume));
+}).add;
+)

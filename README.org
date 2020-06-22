@@ -23,4 +23,6 @@
 * Week #5
 ** DONE [[https://club.tidalcycles.org/t/week-5-lesson-1-musical-notes/891][#1 Musical notes]]
 ** DONE [[https://club.tidalcycles.org/t/week-5-lesson-2-chords-arpeggios-and-algoraoke/913/23][#2 Chords, arpeggios and.. Algoraoke]]
-** TODO [[https://club.tidalcycles.org/t/week-5-lesson-3-adding-and-using-superdirt-synths/1115][#3 Adding and using superdirt synths]]
+** DONE [[https://club.tidalcycles.org/t/week-5-lesson-3-adding-and-using-superdirt-synths/1115][#3 Adding and using superdirt synths]]
+   - [[https://club.tidalcycles.org/t/synthdefs-for-tidal/1092][SynthDefs for Tidal]]
+** DONE [[https://club.tidalcycles.org/t/week-5-lesson-3-superdirt-synths-part-2/1193][#3.2 SuperDirt synths part 2]]
