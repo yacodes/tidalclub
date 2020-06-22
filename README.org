@@ -22,4 +22,5 @@
 ** DONE [[https://club.tidalcycles.org/t/week-4-lesson-3-random-marathon-part-2-randcat-stripe-degrade-sometimes-somecycles-randslice-more/690][#3 Random marathon part 2: randcat, stripe, degrade, sometimes, someCycles, randslice + more]]
 * Week #5
 ** DONE [[https://club.tidalcycles.org/t/week-5-lesson-1-musical-notes/891][#1 Musical notes]]
-** TODO [[https://club.tidalcycles.org/t/week-5-lesson-2-chords-arpeggios-and-algoraoke/913/23][#2 Chords, arpeggios and.. Algoraoke]]
+** DONE [[https://club.tidalcycles.org/t/week-5-lesson-2-chords-arpeggios-and-algoraoke/913/23][#2 Chords, arpeggios and.. Algoraoke]]
+** TODO [[https://club.tidalcycles.org/t/week-5-lesson-3-adding-and-using-superdirt-synths/1115][#3 Adding and using superdirt synths]]

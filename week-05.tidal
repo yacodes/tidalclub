@@ -61,3 +61,96 @@ hush
 
 -- #2 Chords, arpeggios and.. Algoraoke
 -- https://club.tidalcycles.org/t/week-5-lesson-2-chords-arpeggios-and-algoraoke/913/23
+
+d1 $ n "'maj" # s "supermandolin" # legato 2 # gain 1.2 -- playing chords
+
+n "'maj"
+
+-- same as
+
+n "[0,4,7]"
+
+d1 $ n "a'maj" # s "supermandolin" # legato 2 # gain 1.2 -- changing root note
+
+n "a'maj"
+
+d1 $ n "c'maj e'min7" # s "supermandolin"
+  # legato 2 # gain 1.2 -- sequencing
+
+n "e'min7"
+
+-- Karaoke (algoraoke)
+-- Taking chords from a well known song:
+-- https://ukutabs.com/r/radiohead/creep
+
+d1 $ n "<g'maj b'maj c'maj c'min>" # s "supermandolin"
+  # room 0.8 # sz 0.7 # legato 4
+
+d1 $ qtrigger 1 $ jux ((|- n "12") . rev) $ struct "t(5,8,<0 4>)"
+    $ n "<g'maj b'maj c'maj c'min>" # s "supermandolin"
+    # room 0.8 # sz 0.7
+
+d1 $ slow 2 $ n "0 ! ! ! ! ! ! 0*4 0*4" # s "odx"
+
+-- Get all the chords:
+
+import Sound.Tidal.Chords
+
+chordList
+
+d1 $ n "c'7f9 a'9s5" # s "superpiano"
+
+n "'7f9"
+
+chordTable -- raw chord data
+
+d1 $ n "c'maj" # s "superpiano"
+  
+d1 $ n "c'maj'8" # s "superpiano" -- add notes to the chord
+
+d1 $ n "c'maj7" # s "superpiano" -- add interval
+
+hush
+
+n "c'maj7" -- 0,4,7,11
+
+n "c'maj'5" -- 0,4,7,12,16 (5 notes)
+
+d1 $ arpeggiate $ n "c'maj" # "superpiano"
+
+d1 $ arpeggiate $ n "c'maj'8" # "superpiano" -- add notes
+
+d1 $ arpeggiate $ n "c'maj e'min7" # s "superpiano"
+  -- arpeggiating within chord step
+  -- 3 notes for c'maj
+  -- 4 notes for e'min7
+
+d1 $ arp "updown thumbup" $ n "<c'maj'4 e'min7'4>" # s "superpiano"
+
+d1 $ slow 2 $ jux rev $ arp "<updown thumbup pinkyupdown converge diverge>"
+  $ n "<c4'maj'6 e4'min7'8 g5'maj'5 a5'maj'4>" # s "superpiano"
+  # room 0.3 # sz 0.7
+
+-- Chord inversions
+
+d1 $ n "c'maj'ii" # s "superpiano"
+
+d1 $ n "c'maj'4ii" # s "superpiano"
+
+hush
+
+d1 $ trigger 1 $ slow 2 $ n "[~ 0 0 0] [1 1 2 2 2 ~]" |+ n "<f4'min bf4'min>" # s "superpiano" # room 0.2 # sz 0.8 # legato 4
+
+-- #3 Adding and using superdirt synths
+-- https://club.tidalcycles.org/t/week-5-lesson-2-chords-arpeggios-and-algoraoke/913/
+
+d1 $ n "[g4 ~!2 g4] c4*2 [~!3 g5] [~ f5]" # s "bass8"
+  # room 0.8 # sz 0.5 + sustain 0.4
+
+d1 $ n "e4*4" # s "bass8"
+
+pF "dtune" "<1 0.2>" -- patterning custom SynthDef parameters
+
+dtune = pF "dtune" -- alias, put in BootTidal
+
+hush
