@@ -26,3 +26,7 @@
 ** DONE [[https://club.tidalcycles.org/t/week-5-lesson-3-adding-and-using-superdirt-synths/1115][#3 Adding and using superdirt synths]]
    - [[https://club.tidalcycles.org/t/synthdefs-for-tidal/1092][SynthDefs for Tidal]]
 ** DONE [[https://club.tidalcycles.org/t/week-5-lesson-3-superdirt-synths-part-2/1193][#3.2 SuperDirt synths part 2]]
+* Week #6
+** DONE [[https://club.tidalcycles.org/t/week-6-lesson-1-canons-with-off/1123][#1 Canons with "off"]]
+** DONE [[https://club.tidalcycles.org/t/week-6-lesson-2-musical-scales-including-navigating-them-with-waveforms/1256][#2 Musical scales, including navigating them with waveforms]]
+** TODO [[https://club.tidalcycles.org/t/week-6-lesson-3-controlling-midi-devices/1258][#3 Controlling MIDI devices]]

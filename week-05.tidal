@@ -163,3 +163,12 @@ d1 $ n "e3 [~ e3@3 e3@6] e3 a3" # s "moog" # legato 1
 d1 $ n "e3 [~ e4 g5 e3] [f3 a3 f3] [g3 g3]" # s "test" |+ n 12
 
 hush
+
+
+-- MIDI Test
+
+d1 $ n "[e <d ~> b] [~ g e ~] [a d] <a b>" # s "midi" # sustain 0.3
+
+d2 $ s "bd:3*4" # gain 2
+
+hush

@@ -1,0 +1,163 @@
+-- #1 Canons with "off"
+-- https://club.tidalcycles.org/t/week-6-lesson-1-canons-with-off/1123
+
+:t off
+
+d1 $ n "c e" # s "supermandolin"
+
+d1 $ off 0.25 (# crush 4) $ n "c e a f" # s "supermandolin"
+
+d1 $ off 0.25 (|+ n 7) $ n "c e" # s "supermandolin" -- Using the fifth instead of bitcrush
+
+d1 $ off 0.125 (|+ n 7) $ n "c a" # s "supermandolin"
+
+d1 $ off 0.0625 (|+ n 7) $ n "c a f e" # s "supermandolin"
+
+-- shorthands for cycle division
+
+d1 $ off "s" (|+ n 7) $ n "c a f e" # s "supermandolin" -- sixteenth = 0.0625
+
+d1 $ off "e" (|+ n 7) $ n "c a" # s "supermandolin" -- eighth = 0.125
+
+d1 $ off "q" (|+ n 7) $ n "c e" # s "supermandolin" -- quarter = 0.25
+
+d1 $ off "t" (|+ n 7) $ n "c a" # s "supermandolin" -- third = 1/3 = 0.3333...
+
+d1 $ off "f" (|+ n 7) $ n "c a" # s "supermandolin" -- fifth = 1/5 = 0.2
+  
+d1 $ off "w" (|+ n 7) $ n "c a" # s "supermandolin" -- whole = 1
+
+d1 $ off "h" (|+ n 7) $ n "c a" # s "supermandolin" -- half = 0.5
+
+hush 
+
+d1 $ off "2f" (|+ n 7) $ n "c a f e" # s "supermandolin" -- two fifth
+
+d1 $ off "0.5s" (|+ n 7) $ n "c a f e" # s "supermandolin" -- 32nd note
+
+hush 
+
+d1 $ off "[e q s]*4" (|+ n "[7 12 -5]") $ n (slow 2 "c(3, 8) a(3, 8) f(5, 8) e*2")
+  # s "supermandolin"
+  # legato 4
+
+hush
+
+d1
+  $ off "s" (|+ n (-12))
+  $ off "e" (|+ n "<7 12 -5>")
+  $ n (slow 2 "c(3, 8) a(3, 8) f(5, 8) e*2")
+  # s "supermandolin"
+  # legato 4
+  
+hush
+
+d1 $ n "{0 1 [~ 2] 3*2, 5 ~ 3 6 4}"
+  # s "drum"
+
+d1 $ off "<s q e>" (# squiz 4) $ n "{0 1 [~ 2] 3*2, 5 ~ 3 6 4}"
+  # s "drum"
+
+d1
+  $ jux rev
+  $ off "e" (iter 4)
+  $ off "<s q e>" (# squiz 4)
+  $ n "{0 1 [~ 2] 3*2, 5 ~ 3 6 4}"
+  # s "drum"
+
+hush
+
+-- #2 Musical scales, including navigating them with waveforms
+-- https://club.tidalcycles.org/t/week-6-lesson-2-musical-scales-including-navigating-them-with-waveforms/1256
+
+d1 $ n "0 5" # s "arpy"
+
+d1 $ n "0 1 2 3 4 5 6 7 8 9" # s "arpy"
+
+d1 $ n "0 12" # s "superpiano"
+
+-- Arpy is in ritusen scale.
+-- It's pentatonic, so random notes are sounding fine.
+  
+d1 $ n ("0 [7 2] 3 2" |+ irand 3) # s "arpy"
+
+-- It does not work for superpiano, cause
+-- of twelve tone temperament.
+  
+d1 $ n ("0 [7 2] 3 2" |+ irand 3) # s "superpiano"
+
+-- Using scale fixes this.
+  
+d1 $ n (scale "ritusen" $ "0 [7 2] 3 2" |+ irand 3)
+  # s "superpiano"
+
+hush 
+
+scaleList
+
+d1 $ n (scale "kumai" $ "0 [7 2] 3 2" |+ irand 3)
+  # s "superpiano"
+
+hush 
+
+-- Using waveforms for picking notes from scale.
+
+d1 $ scramble 4 $ segment 16 $ n (scale "ritusen" $ floor <$> (range 0 7 saw))
+  # s "supersaw" # lpf 1000 # lpq 0.4 |- n 24 -- flooring, cause scale accepts only int
+
+hush 
+
+-- Patterning sine range
+
+d1
+  $ segment 16
+  $ n (scale "minor" $ floor <$> (range "<0 4 -8>" "<12 14 13 -13>" sine))
+  # s "supersaw" # lpf 1000 # lpq 0.4
+
+hush 
+
+-- Patterning scales
+  
+d1
+  $ segment 16
+  $ n (scale "<minor major>" $ floor <$> (range "<0 4 -8>" "<12 14 13 -13>" sine))
+  # s "supersaw" # lpf 1000 # lpq 0.4
+
+
+-- Structuring instead of segment
+  
+d1
+  $ struct "t(<9 7 11 13>, 16)"
+  $ n (scale "<minor major>" $ floor <$> (range "<0 4 -8>" "<12 14 13 -13>" sine))
+  # s "supersaw" # lpf 1000 # lpq 0.4
+
+hush
+
+-- Multiplying different waveforms together
+
+d1
+  $ segment 16
+  $ n (scale "minor"
+       $ floor <$> (slow 2 $ (slow 2 sine + slow 3 cosine) * "<6 -3>"))
+  # s "supersaw" # lpf 1000 # lpq 0.4
+
+d1
+  $ struct "t(<9 7 11 13>, 16)"
+  $ n (scale "minor"
+       $ floor <$> (slow 2 $ (slow 2 sine + slow 3 cosine) * "<6 -3>"))
+  # s "supersaw" # lpf (range 400 5000 saw) # lpq 0.4
+
+
+d1
+  $ off "q" (|+ n 12)
+  $ struct "t(<9 7 11 13>, 16)"
+  $ n (scale "minor"
+       $ floor <$> (slow 2 $ (slow 2 sine + slow 3 cosine) * "<6 -3>"))
+  # s "supersaw" # lpf (range 400 5000 saw) # lpq 0.4
+  -- # pan "[0 1]"
+
+hush
+
+d1 $ n (scale "minPent" "0 [3 2] [~ 5] 4" + "<0 4 3>") # s "superpiano" 
+
+hush

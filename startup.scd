@@ -66,3 +66,19 @@ SynthDef(\test, {
 	OffsetOut.ar(out, DirtPan.ar(outAudio, ~dirt.numChannels, pan, volume));
 }).add;
 )
+
+MIDIClient.init(4, 4);
+
+MIDIClient.restart;
+
+MIDIIn.connectAll;
+
+MIDIClient.disposeClient;
+
+~midiOut = MIDIOut.newByName("SuperCollider", "in0");
+
+~dirt.soundLibrary.addMIDI(\midi, ~midiOut);
+
+MIDIClient.sources;
+
+MIDIClient.destinations;
