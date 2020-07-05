@@ -1,2 +1,93 @@
 -- #1 Composing patterns together with overlay, stack, append, cat, seqPLoop and seqP
 -- https://club.tidalcycles.org/t/week-7-lesson-1-composing-patterns-together-with-overlay-stack-append-cat-seqploop-and-seqp/1323
+
+d1 $ fast "1 2 3 4" $ sound "lt mt ht bd*2"
+
+d1 $ overlay (fast "1 2 3 4" $ sound "lt mt ht ~")
+  (sound "cp(3,8)" # speed 2)
+  -- Plays 2 patterns at the same time
+
+drawLine $ overlay ("t") $ "1 2 3 4"
+
+d1 $ stack [
+  fast "1 2 3 4" $ sound "lt mt ht ~",
+  s "cp(3,8)" # speed 2,
+  s "[bd(5,8), sn(7,16,3)]"
+] -- like overlay, but for multiple patterns
+
+drawLine $ stack [
+  "t",
+  "1 2 3 4",
+  "0!4"
+]
+
+hush
+
+-- Profit of stack is applying effects or functions to all elements at once
+d1 $ chunk 4 (hurry 2) $ stack [
+  fast "1 2 3 4" $ sound "lt mt ht ~",
+  s "cp(3,8)" # speed 2,
+  s "[bd(5,8), sn(7,16,3)]"
+]
+
+all $ (chunk 4 (hurry 2)) -- Apply effects to all running patterns: d1, d2, d3...
+
+all id -- Clear all effects
+
+d1 $ stack [
+    fast "1 2 3 4" $ sound "lt mt ht ~",
+    s "cp(3,8)" # speed 2,
+    s "[bd(5,8), sn(7,16,3)]"
+] # squiz "<4 2>"
+
+hush
+
+
+d1 $ append (fast "1 2 3 4" $ s "lt mt ht~")
+  (s "cp(3, 8)" # speed 2) -- Appending one after another
+
+d1 $ cat [
+    fast "1 2 3 4" $ s "lt mt ht~",
+    s "cp(3, 8)" # speed 2,
+    s "[bd(5, 8), sn(7, 16, 3)]"
+] -- Appending more than two patterns
+
+hush
+
+d1 $ fastappend (fast "1 2 3 4" $ s "lt mt ht~")
+  (s "cp(3, 8)" # speed 2) -- Squashes 2 cycles into 1, so pattern is twice as fast
+
+d1 $ fastcat [
+    fast "1 2 3 4" $ s "lt mt ht~",
+    s "cp(3, 8)" # speed 2,
+    s "[bd(5, 8), sn(7, 16, 3)]"
+] -- Squashes everything into 1 cycle
+
+hush
+
+
+d1 $ seqPLoop  [
+                (0, 1, fast "1 2 3 4" $ s "lt mt ht ~"),
+                (1, 2, s "cp(3, 8)" # speed 2),
+                (2, 3, s "[bd(5, 8), sn(7, 16, 3)]")
+               ] -- Same as cat above
+
+d1 $ seqPLoop  [
+                (0, 2, fast "1 2 3 4" $ s "lt mt ht ~"), -- Plays 0 - 2 circles
+                (1, 3, s "cp(3, 8)" # speed 2), -- Plays 1 - 3 circles
+                (5, 6, s "[bd(5, 8), sn(7, 16, 3)]") -- Plays 5 - 6 circles
+               ] -- Numbers represent circles
+
+-- If you don't want to loop sequence
+d1 $ qtrigger 1 $ seqP [
+                (0, 1, fast "1 2 3 4" $ s "lt mt ht ~"),
+                (1, 2, s "cp(3, 8)" # speed 2),
+                (2, 3, s "[bd(5, 8), sn(7, 16, 3)]")
+               ]
+
+hush
+
+
+-- #2 Composing fuctions together with "."
+-- https://club.tidalcycles.org/t/week-7-lesson-2-composing-fuctions-together-with/1334
+
