@@ -1,33 +1,35 @@
 #+TITLE: Tidal Club Course
 
-* Week #1
+* Week #1 — Mini Notation
 ** DONE [[https://club.tidalcycles.org/t/technical-tour-of-a-tidal-system/147][Technical tour of a tidal system]]
 ** DONE [[https://club.tidalcycles.org/t/week-1-lesson-1-tidal-interaction/230][#1 Tidal Interaction]]
 ** DONE [[https://club.tidalcycles.org/t/week-1-lesson-2-loading-sample-packs/341][#2 Loading sample packs]]
 ** DONE [[https://club.tidalcycles.org/t/week-1-lesson-3-sequencing-with-the-mini-notation/367][#3 Sequencing with mini-notation]] 
 ** DONE [[https://club.tidalcycles.org/t/week-1-lesson-4-mini-notation-part-2/416][#4 Mini-notation part 2]] 
 ** DONE [[https://club.tidalcycles.org/t/week-1-lesson-5-mini-notation-part-3/449][#5 Mini-notation part 3]]
-* Week #2
+* Week #2 — Effects, Time, Arithmetic
 ** DONE [[https://club.tidalcycles.org/t/week-2-lesson-1-starting-out-with-effects/463][#1 Starting out with effects]]
 ** DONE [[https://club.tidalcycles.org/t/week-2-lesson-2-manipulating-time-with-setcps-cps-patterns-and-fast-slow-functions/466][#2 Manipulating time with setcps, cps patterns and fast/slow functions]]
 ** DONE [[https://club.tidalcycles.org/t/week-2-lesson-3-combining-patterns-with-arithmetic-plus-the-hurry-function/489][#3 Combining patterns with arithmetic, plus the ‘hurry’ function]]
-* Week #3
+* Week #3 — Every, $, Longer Samples
 ** DONE [[https://club.tidalcycles.org/t/week-3-lesson-1-exploring-the-every-function-including-tackling-the-meaning-of/502][#1 Exploring the ‘every’ function, including tackling the meaning of ‘$’]]
 ** DONE [[https://club.tidalcycles.org/t/week-3-lesson-2-cut-vs-legato/515][#2 Cut vs legato]]
 ** DONE [[https://club.tidalcycles.org/t/week-3-lesson-3-slice-and-splice/519][#3 Slice and splice]]
 ** DONE [[https://club.tidalcycles.org/t/week-3-lesson-4-chop-and-striate/534][#4 Chop and striate]]
-* Week #4
+* Week #4 — Waveforms, Randomness
 ** DONE [[https://club.tidalcycles.org/t/week-4-lesson-1-continuous-patterns-sine-square-tri-saw-and-random-functions/608][#1 Continuous patterns - sine, square, tri, saw and random functions]]
 ** DONE [[https://club.tidalcycles.org/t/week-4-lesson-2-random-marathon-rand-irand-mininotation-randomness-scramble-shuffle-choose-more/685][#2 Random marathon: rand, irand, mininotation randomness, scramble, shuffle, choose + more]]
 ** DONE [[https://club.tidalcycles.org/t/week-4-lesson-3-random-marathon-part-2-randcat-stripe-degrade-sometimes-somecycles-randslice-more/690][#3 Random marathon part 2: randcat, stripe, degrade, sometimes, someCycles, randslice + more]]
-* Week #5
+* Week #5 — Notes, Chords, Arpeggios
 ** DONE [[https://club.tidalcycles.org/t/week-5-lesson-1-musical-notes/891][#1 Musical notes]]
 ** DONE [[https://club.tidalcycles.org/t/week-5-lesson-2-chords-arpeggios-and-algoraoke/913/23][#2 Chords, arpeggios and.. Algoraoke]]
 ** DONE [[https://club.tidalcycles.org/t/week-5-lesson-3-adding-and-using-superdirt-synths/1115][#3 Adding and using superdirt synths]]
    - [[https://club.tidalcycles.org/t/synthdefs-for-tidal/1092][SynthDefs for Tidal]]
 ** DONE [[https://club.tidalcycles.org/t/week-5-lesson-3-superdirt-synths-part-2/1193][#3.2 SuperDirt synths part 2]]
-* Week #6
+* Week #6 — Canons, Scales, Controlling MIDI
 ** DONE [[https://club.tidalcycles.org/t/week-6-lesson-1-canons-with-off/1123][#1 Canons with "off"]]
 ** DONE [[https://club.tidalcycles.org/t/week-6-lesson-2-musical-scales-including-navigating-them-with-waveforms/1256][#2 Musical scales, including navigating them with waveforms]]
 ** DONE [[https://club.tidalcycles.org/t/week-6-lesson-3-controlling-midi-devices/1258][#3 Controlling MIDI devices]]
-** TODO [[https://club.tidalcycles.org/t/week-6-lesson-4-controlling-tidal-with-midi/1260][#4 Controlling Tidal with MIDI]] 
+** DONE [[https://club.tidalcycles.org/t/week-6-lesson-4-controlling-tidal-with-midi/1260][#4 Controlling Tidal with MIDI]] 
+* Week #7 — Composition
+** TODO [[https://club.tidalcycles.org/t/week-7-lesson-1-composing-patterns-together-with-overlay-stack-append-cat-seqploop-and-seqp/1323][#1 Composing patterns together with overlay, stack, append, cat, seqPLoop and seqP]] 
