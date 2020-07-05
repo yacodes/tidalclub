@@ -171,3 +171,36 @@ d1
   |+ n "a4"
 
 hush
+
+-- #3 Controlling MIDI devices
+-- https://club.tidalcycles.org/t/week-6-lesson-3-controlling-midi-devices/1258
+
+d1
+  $ whenmod 3 1 (fa 2) $ n ("<e3!3 g3>" + (scale "minor" (cat ["0 [~ 4] 5 [5 10]", "5 [3] [~ 3*2] <5 7>"])))
+  # s "midi" # sustain "{1 1.5 1.25 0.75}%5"
+
+d2 $ s "bd*4" # gain 2
+
+d1 $ midinote "60 62 64 67" # s "midi"
+
+d1 $ every 2 (fa 2) $ n ("e3 a3 [~ <g3 f3*2>] c3" + "0 12") # s "midi" # legato 1 
+  # cc "9:75" # cc "10:85"
+
+d1 $ every 2 (fa 2) $ n ("e3 a3 [~ <g3 f3*2>] c3" + "0 12") # s "midi" # legato 1
+  # ccn "9" # ccv (range 70 100 $ slow 2 $ sine)
+
+d2 $ s "bd*4" # gain 2
+  
+:t nrpn
+
+d1 $ every 2 (fa 2) $ n ("e3 a3 [~ <g3 f3*2>] c3" + "0 12") # s "midi" # legato 1
+  # nrpnn "10" # nrpnv "1200" -- ???
+  
+hush
+
+  
+-- #4 Controlling Tidal with MIDI
+-- https://club.tidalcycles.org/t/week-6-lesson-4-controlling-tidal-with-midi/1260
+
+-- Feels like controlling Tidal with MIDI is not worth it
+-- cF 0.5 "40" == "^40"

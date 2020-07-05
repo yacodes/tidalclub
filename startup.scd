@@ -9,9 +9,15 @@
     ~dirt = SuperDirt(2, s);
     ~dirt.loadSoundFiles;
     s.sync;
-    ~dirt.start(48000, 24.collect({0}));
+    ~dirt.start(20626, 24.collect({0}));
   };
 )
+
+MIDIClient.init;
+
+~microfreakMIDIOut = MIDIOut.newByName("Arturia MicroFreak", "Arturia MicroFreak MIDI 1");
+
+~dirt.soundLibrary.addMIDI(\microfreak, ~microfreakMIDIOut);
 
 (
 SynthDef(\bass8, {
