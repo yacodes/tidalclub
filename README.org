@@ -1,5 +1,6 @@
-#+TITLE: Tidal Club Course
+#+TITLE: Tidal Club
 
+* [[https://club.tidalcycles.org/c/course/14?order=created][Navigation]]
 * Week #1 — Mini Notation
 ** DONE [[https://club.tidalcycles.org/t/technical-tour-of-a-tidal-system/147][Technical tour of a tidal system]]
 ** DONE [[https://club.tidalcycles.org/t/week-1-lesson-1-tidal-interaction/230][#1 Tidal Interaction]]
@@ -33,4 +34,5 @@
 ** DONE [[https://club.tidalcycles.org/t/week-6-lesson-4-controlling-tidal-with-midi/1260][#4 Controlling Tidal with MIDI]] 
 * Week #7 — Composition
 ** DONE [[https://club.tidalcycles.org/t/week-7-lesson-1-composing-patterns-together-with-overlay-stack-append-cat-seqploop-and-seqp/1323][#1 Composing patterns together with overlay, stack, append, cat, seqPLoop and seqP]] 
-** TODO [[https://club.tidalcycles.org/t/week-7-lesson-2-composing-fuctions-together-with/1334][#2 Composing fuctions together with "."]] 
+** DONE [[https://club.tidalcycles.org/t/week-7-lesson-2-composing-fuctions-together-with/1334][#2 Composing functions together with "."]] 
+** DONE [[https://club.tidalcycles.org/t/week-7-lesson-3-composing-tracks-with-the-ur-function/1340][#3 Composing tracks with the "ur" function]] 

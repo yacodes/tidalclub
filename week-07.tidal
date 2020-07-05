@@ -91,3 +91,93 @@ hush
 -- #2 Composing fuctions together with "."
 -- https://club.tidalcycles.org/t/week-7-lesson-2-composing-fuctions-together-with/1334
 
+d1 $ s "bd [~ sd] bd sd" # squiz 2
+
+d1
+  $ every 3 (rev) $ every 3 (chop 8)
+  $ s "bd [~ sd] bd sd" # squiz 2
+
+d1
+  $ every 3 (rev . chop 8) -- Shorthand
+  $ s "bd [~ sd] bd sd" # squiz 2
+
+d1
+  $ every 3 (rev . chop 8 . fast 2) -- More then 2 functions
+  $ s "bd [~ sd] bd sd" # squiz 2
+
+d1
+  $ every 3 ((# room 0.4) . rev . chop 8 . fast 2)
+  $ s "bd [~ sd] bd sd" # squiz 2
+
+hush
+
+  
+-- #3 Composing tracks with the "ur" function
+-- https://club.tidalcycles.org/t/week-7-lesson-3-composing-tracks-with-the-ur-function/1340
+
+d1
+  $ ur 16 "[bdsd, ~ claps, ~ [bass bass:crunch] ~ bass]" -- Length & Global Pattern
+    [ -- Patterns
+        ("bdsd", s "bd [~ sd] bd sd" # squiz 2),
+        ("claps", s "cp*2 cp*3"
+            # delay 0.8 # dt "t" # dfb 0.4
+            # orbit 4 # speed 4),
+        ("bass", struct "t(3, 8)" $ s "bass" # shape 0.7 # speed "[1, ~ 2]")
+    ]
+    [ -- Effects
+        ("crunch", (# crush 3))
+    ]
+
+hush
+
+d1 $ ur 16 "bdsd" -- Repeats every 16 cycles
+  [("bdsd", s "bd [~ sd] bd sd")] -- Patterns:[Name, Pattern]
+  [] -- Effects:[Name, Pattern]
+
+d1 $ ur 16 "bdsd ~" -- bdsd plays for 8 cycles. other 8 cycles - rest
+  [("bdsd", s "bd [~ sd] bd sd")]
+  []
+
+d1 $ ur 4 "bdsd claps" -- bdsd & claps plays for 2 cycles
+  [
+    ("bdsd", s "bd [~ sd] bd sd"),
+    ("claps", s "cp*2 cp*3"
+        # delay 0.8 # dt "t" # dfb 0.4
+        # orbit 4 # speed 4)
+  ]
+  []
+
+  
+d1 $ ur 4 "bdsd ~ claps" -- bdsd & claps plays for 1.3333 cycles
+  [
+    ("bdsd", s "bd [~ sd] bd sd"),
+    ("claps", s "cp*2 cp*3"
+        # delay 0.8 # dt "t" # dfb 0.4
+        # orbit 4 # speed 4)
+  ]
+  []
+
+d1 $ ur 4 "[bdsd claps, bass]"
+  [
+    ("bdsd", s "bd [~ sd] bd sd"),
+    ("claps", s "cp*2 cp*3"
+        # delay 0.8 # dt "t q" # dfb 0.4
+        # orbit 4 # speed 4), -- Specifing orbit for audio routing
+    ("bass", struct "t(3, 8)" $ s "bass" # shape 0.7 # speed "[1, ~ 2]")
+  ]
+  []
+
+d1 $ ur 4 "[bdsd:crush claps, bass bass:choprev]" -- Applying effect for the second bass part
+  [
+    ("bdsd", s "bd [~ sd] bd sd"),
+    ("claps", s "cp*2 cp*3"
+        # delay 0.8 # dt "t q" # dfb 0.4
+        # orbit 4 # speed 4),
+    ("bass", struct "t(3, 8)" $ s "bass" # shape 0.7 # speed "[1, ~ 2]")
+  ]
+  [
+    ("choprev", rev . chop 8)
+    ("crunch", (# crush 3))
+  ] -- Specifing effects
+
+hush
