@@ -3,40 +3,41 @@
 * [[https://club.tidalcycles.org/c/course/14?order=created][Navigation]]
 * [[https://club.tidalcycles.org/c/course/challenges/21][Challenges]]
 * FOTW
-* Week #1 — Mini Notation
-  1. [[https://club.tidalcycles.org/t/technical-tour-of-a-tidal-system/147][Technical tour of a tidal system]]
-  2. [[https://club.tidalcycles.org/t/week-1-lesson-1-tidal-interaction/230][Tidal Interaction]]
-  3. [[https://club.tidalcycles.org/t/week-1-lesson-2-loading-sample-packs/341][Loading sample packs]]
-  4. [[https://club.tidalcycles.org/t/week-1-lesson-3-sequencing-with-the-mini-notation/367][Sequencing with mini-notation]] 
-  5. [[https://club.tidalcycles.org/t/week-1-lesson-4-mini-notation-part-2/416][Mini-notation #2]] 
-  6. [[https://club.tidalcycles.org/t/week-1-lesson-5-mini-notation-part-3/449][Mini-notation #3]]
-* Week #2 — Effects, Time, Arithmetic
-  1. [[https://club.tidalcycles.org/t/week-2-lesson-1-starting-out-with-effects/463][Starting out with effects]]
-  2. [[https://club.tidalcycles.org/t/week-2-lesson-2-manipulating-time-with-setcps-cps-patterns-and-fast-slow-functions/466][Manipulating time with ~setcps~; ~fast~ / ~slow~ functions]]
-  3. [[https://club.tidalcycles.org/t/week-2-lesson-3-combining-patterns-with-arithmetic-plus-the-hurry-function/489][Combining patterns with arithmetic; ~hurry~ function]]
-* Week #3 — Every, $, Longer Samples
-  1. [[https://club.tidalcycles.org/t/week-3-lesson-1-exploring-the-every-function-including-tackling-the-meaning-of/502][Exploring the ~every~ function]]
-  2. [[https://club.tidalcycles.org/t/week-3-lesson-2-cut-vs-legato/515][Sustain: ~cut~ vs ~legato~ ]]
-  3. [[https://club.tidalcycles.org/t/week-3-lesson-3-slice-and-splice/519][Samples: ~slice~ and ~splice~ ]]
-  4. [[https://club.tidalcycles.org/t/week-3-lesson-4-chop-and-striate/534][Samples: ~chop~ and ~striate~ ]]
-* Week #4 — Waveforms, Randomness
-  1. [[https://club.tidalcycles.org/t/week-4-lesson-1-continuous-patterns-sine-square-tri-saw-and-random-functions/608][Continuous patterns: ~sine~, ~square~, ~tri~, ~saw~ and ~random~ functions]] 
-  2. [[https://club.tidalcycles.org/t/week-4-lesson-2-random-marathon-rand-irand-mininotation-randomness-scramble-shuffle-choose-more/685][Random marathon: ~rand~, ~irand~, ~scramble~, ~shuffle~, ~choose~ ]]
-  3. [[https://club.tidalcycles.org/t/week-4-lesson-3-random-marathon-part-2-randcat-stripe-degrade-sometimes-somecycles-randslice-more/690][Random marathon: ~randcat~, ~stripe~, ~degrade~, ~sometimes~, ~someCycles~, ~randslice~ ]]
-* Week #5 — Notes, Chords, Arpeggios
-  1. [[https://club.tidalcycles.org/t/week-5-lesson-1-musical-notes/891][Musical ~notes~ functions]]
-  2. [[https://club.tidalcycles.org/t/week-5-lesson-2-chords-arpeggios-and-algoraoke/913/23][Chords, ~arpeggios~ and Algoraoke]]
-  3. [[https://club.tidalcycles.org/t/week-5-lesson-3-adding-and-using-superdirt-synths/1115][Adding and using ~SuperDirt synths~ ]]
-  4. [[https://club.tidalcycles.org/t/week-5-lesson-3-superdirt-synths-part-2/1193][Writing ~SuperDirt synths~ ]]
-* Week #6 — Canons, Scales, Controlling MIDI
-  1. [[https://club.tidalcycles.org/t/week-6-lesson-1-canons-with-off/1123][Canons with ~off~ function]]
-  2. [[https://club.tidalcycles.org/t/week-6-lesson-2-musical-scales-including-navigating-them-with-waveforms/1256][Musical ~scale~; navigating scales with waveforms]] 
-  3. [[https://club.tidalcycles.org/t/week-6-lesson-3-controlling-midi-devices/1258][Controlling ~MIDI~ devices]] 
-  4. [[https://club.tidalcycles.org/t/week-6-lesson-4-controlling-tidal-with-midi/1260][Controlling Tidal with ~MIDI~ events]]
-* Week #7 — Composition
-  1. [[https://club.tidalcycles.org/t/week-7-lesson-1-composing-patterns-together-with-overlay-stack-append-cat-seqploop-and-seqp/1323][Composing with ~overlay~, ~stack~, ~append~, ~cat~, ~seqPLoop~ and ~seqP~ functions]]
-  2. [[https://club.tidalcycles.org/t/week-7-lesson-2-composing-fuctions-together-with/1334][Composing functions with ~.~ operator]]
-  3. [[https://club.tidalcycles.org/t/week-7-lesson-3-composing-tracks-with-the-ur-function/1340][Composing tracks with the ~ur~ function]]  
-* Week #8 — Functions
-  1. [[https://club.tidalcycles.org/t/week-8-lesson-1-shifting-time-beat-rotation-with-and/1352][Shifting time / beat rotation with ~(<-)~ and ~(->)]]~
-  2. [[https://club.tidalcycles.org/t/week-8-lesson-2-binary-patterns-with-struct-stitch-and-sew/1423][Binary patterns with ~struct~, ~stitch~ and ~sew~ functions]]
+* Weeks
+** #1 Mini Notation
+   1. [[https://club.tidalcycles.org/t/technical-tour-of-a-tidal-system/147][Technical tour of a tidal system]]
+   2. [[https://club.tidalcycles.org/t/week-1-lesson-1-tidal-interaction/230][Tidal Interaction]]
+   3. [[https://club.tidalcycles.org/t/week-1-lesson-2-loading-sample-packs/341][Loading sample packs]]
+   4. [[https://club.tidalcycles.org/t/week-1-lesson-3-sequencing-with-the-mini-notation/367][Sequencing with mini-notation]] 
+   5. [[https://club.tidalcycles.org/t/week-1-lesson-4-mini-notation-part-2/416][Mini-notation #2]] 
+   6. [[https://club.tidalcycles.org/t/week-1-lesson-5-mini-notation-part-3/449][Mini-notation #3]]
+** #2 Effects, Time, Arithmetic
+   1. [[https://club.tidalcycles.org/t/week-2-lesson-1-starting-out-with-effects/463][Starting out with effects]]
+   2. [[https://club.tidalcycles.org/t/week-2-lesson-2-manipulating-time-with-setcps-cps-patterns-and-fast-slow-functions/466][Manipulating time with ~setcps~; ~fast~ / ~slow~ functions]]
+   3. [[https://club.tidalcycles.org/t/week-2-lesson-3-combining-patterns-with-arithmetic-plus-the-hurry-function/489][Combining patterns with arithmetic; ~hurry~ function]]
+** #3 Every, $, Longer Samples
+   1. [[https://club.tidalcycles.org/t/week-3-lesson-1-exploring-the-every-function-including-tackling-the-meaning-of/502][Exploring the ~every~ function]]
+   2. [[https://club.tidalcycles.org/t/week-3-lesson-2-cut-vs-legato/515][Sustain: ~cut~ vs ~legato~ ]]
+   3. [[https://club.tidalcycles.org/t/week-3-lesson-3-slice-and-splice/519][Samples: ~slice~ and ~splice~ ]]
+   4. [[https://club.tidalcycles.org/t/week-3-lesson-4-chop-and-striate/534][Samples: ~chop~ and ~striate~ ]]
+** #4 Waveforms, Randomness
+   1. [[https://club.tidalcycles.org/t/week-4-lesson-1-continuous-patterns-sine-square-tri-saw-and-random-functions/608][Continuous patterns: ~sine~, ~square~, ~tri~, ~saw~ and ~random~ functions]] 
+   2. [[https://club.tidalcycles.org/t/week-4-lesson-2-random-marathon-rand-irand-mininotation-randomness-scramble-shuffle-choose-more/685][Random marathon: ~rand~, ~irand~, ~scramble~, ~shuffle~, ~choose~ ]]
+   3. [[https://club.tidalcycles.org/t/week-4-lesson-3-random-marathon-part-2-randcat-stripe-degrade-sometimes-somecycles-randslice-more/690][Random marathon: ~randcat~, ~stripe~, ~degrade~, ~sometimes~, ~someCycles~, ~randslice~ ]]
+** #5 Notes, Chords, Arpeggios
+   1. [[https://club.tidalcycles.org/t/week-5-lesson-1-musical-notes/891][Musical ~notes~ functions]]
+   2. [[https://club.tidalcycles.org/t/week-5-lesson-2-chords-arpeggios-and-algoraoke/913/23][Chords, ~arpeggios~ and Algoraoke]]
+   3. [[https://club.tidalcycles.org/t/week-5-lesson-3-adding-and-using-superdirt-synths/1115][Adding and using ~SuperDirt synths~ ]]
+   4. [[https://club.tidalcycles.org/t/week-5-lesson-3-superdirt-synths-part-2/1193][Writing ~SuperDirt synths~ ]]
+** #6 Canons, Scales, Controlling MIDI
+   1. [[https://club.tidalcycles.org/t/week-6-lesson-1-canons-with-off/1123][Canons with ~off~ function]]
+   2. [[https://club.tidalcycles.org/t/week-6-lesson-2-musical-scales-including-navigating-them-with-waveforms/1256][Musical ~scale~; navigating scales with waveforms]] 
+   3. [[https://club.tidalcycles.org/t/week-6-lesson-3-controlling-midi-devices/1258][Controlling ~MIDI~ devices]] 
+   4. [[https://club.tidalcycles.org/t/week-6-lesson-4-controlling-tidal-with-midi/1260][Controlling Tidal with ~MIDI~ events]]
+** #7 Composition
+   1. [[https://club.tidalcycles.org/t/week-7-lesson-1-composing-patterns-together-with-overlay-stack-append-cat-seqploop-and-seqp/1323][Composing with ~overlay~, ~stack~, ~append~, ~cat~, ~seqPLoop~ and ~seqP~ functions]]
+   2. [[https://club.tidalcycles.org/t/week-7-lesson-2-composing-fuctions-together-with/1334][Composing functions with ~.~ operator]]
+   3. [[https://club.tidalcycles.org/t/week-7-lesson-3-composing-tracks-with-the-ur-function/1340][Composing tracks with the ~ur~ function]]  
+** #8 Functions
+   1. [[https://club.tidalcycles.org/t/week-8-lesson-1-shifting-time-beat-rotation-with-and/1352][Shifting time / beat rotation with ~(<-)~ and ~(->)~ ]]
+   2. [[https://club.tidalcycles.org/t/week-8-lesson-2-binary-patterns-with-struct-stitch-and-sew/1423][Binary patterns with ~struct~, ~stitch~ and ~sew~ functions]]
