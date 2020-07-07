@@ -1,6 +1,8 @@
 #+TITLE: Tidal Club
 
 * [[https://club.tidalcycles.org/c/course/14?order=created][Navigation]]
+* Challenges
+* FOTW
 * Week #1 — Mini Notation
 ** DONE [[https://club.tidalcycles.org/t/technical-tour-of-a-tidal-system/147][Technical tour of a tidal system]]
 ** DONE [[https://club.tidalcycles.org/t/week-1-lesson-1-tidal-interaction/230][#1 Tidal Interaction]]
@@ -36,3 +38,6 @@
 ** DONE [[https://club.tidalcycles.org/t/week-7-lesson-1-composing-patterns-together-with-overlay-stack-append-cat-seqploop-and-seqp/1323][#1 Composing patterns together with overlay, stack, append, cat, seqPLoop and seqP]] 
 ** DONE [[https://club.tidalcycles.org/t/week-7-lesson-2-composing-fuctions-together-with/1334][#2 Composing functions together with "."]] 
 ** DONE [[https://club.tidalcycles.org/t/week-7-lesson-3-composing-tracks-with-the-ur-function/1340][#3 Composing tracks with the "ur" function]] 
+* Week #8 — Functions
+** DONE [[https://club.tidalcycles.org/t/week-8-lesson-1-shifting-time-beat-rotation-with-and/1352][#1 Shifting time / beat rotation with <~ and ~>]] 
+** TODO [[https://club.tidalcycles.org/t/week-8-lesson-2-binary-patterns-with-struct-stitch-and-sew/1423][#2 Binary patterns with struct, stitch and sew]] 

@@ -1,0 +1,29 @@
+-- #1 Shifting time / beat rotation with <~ and ~>
+-- https://club.tidalcycles.org/t/week-8-lesson-1-shifting-time-beat-rotation-with-and/1352
+
+d1 $ s "bd*4" # gain 1
+
+d1 $ n "[0 [1 0] 6*2 [3 4*2], 8(5, 8)]" # s "jazz"
+
+d1 $ (0.25 <~) $ n "[0 [1 0] 6*2 [3 4*2], 8(5, 8)]" # s "jazz"
+
+d1 $ (0.25 ~>) $ n "[0 [1 0] 6*2 [3 4*2], 8(5, 8)]" # s "jazz"
+
+drawLine $ overlay ((0.25 ~>) $ "1 2 3 4") $ overlay ((0.25 <~) $ "1 2 3 4") $ "1 2 3 4"
+
+d1 $ every 3 (0.25 <~) $ n "[0 [1 0] 6*2 [3 4*2], 8(5, 8)]" # s "jazz"
+
+d1 $ every 3 (0.25 ~>) $ n "[0 [1 0] 6*2 [3 4*2], 8(5, 8)]" # s "jazz"
+
+d1 $ ("<0 0.25 0.75>" ~>) $ n "[0 [1 0] 6*2 [3 4*2], 8(5, 8)]" # s "jazz"
+
+d1 $ (~>) "<0 0.25 0.75>" $ n "[0 [1 0] 6*2 [3 4*2], 8(5, 8)]" # s "jazz"
+
+d1 $ jux rev $ every 2 ("e" <~) $ every 3 ("q" <~) $ loopAt 1 $ chop 8 $ s "breaks125"
+
+d1 $ jux ("e" <~) $ loopAt 1 $ chop 8 $ s "breaks125"
+
+hush
+
+-- #2 Binary patterns with struct, stitch and sew
+-- https://club.tidalcycles.org/t/week-8-lesson-2-binary-patterns-with-struct-stitch-and-sew/1423
