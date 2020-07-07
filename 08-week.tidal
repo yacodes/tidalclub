@@ -27,3 +27,76 @@ hush
 
 -- #2 Binary patterns with struct, stitch and sew
 -- https://club.tidalcycles.org/t/week-8-lesson-2-binary-patterns-with-struct-stitch-and-sew/1423
+
+d1 $ struct "t f t t f t f f" $ s "sd"
+
+d1 $ struct "t ~ t t ~ t ~ ~" $ s "sd" -- Same
+
+d1 $ struct (inv "t f t t f t f f") $ s "sd" -- Invert pattern
+
+d1 $ struct (every 3 inv "t f t t f t f f") $ s "sd"
+
+d1 $ struct "t(3, 8)" $ s "sd" -- Euclidean syntax
+
+d1 $ struct (inv "t(3, 8)") $ s "sd" -- Similar to t(5, 8, 1)
+
+drawLine $ struct "t(3, 8)" "o"
+
+drawLine $ struct (inv "t(3, 8)") "o"
+
+drawLine $ struct "t(5, 8, 1)" "o" -- Same
+
+drawLine $ struct "f(5, 8)" "o" -- Using false as structure
+
+drawLine $ struct (inv "t(3, 8)") "o" 
+
+drawLine $ struct "f(3, 8)" "o" -- Same
+
+d1 $ stack [
+  struct "t(3, 8)" $ s "bd",
+  struct "f(3, 8)" $ s "sd"
+] -- Filling the gaps
+
+d1 $ s $ stitch "t(3, 8)" "bd" "sd" -- Same
+
+d1 $ s $ stitch "t(<3 5>, <8!3 6>, <0 2 4>)" "bd" "sd"
+
+drawLine $ struct "<t f>(3, 8)" "o" -- Alternate between True & False
+
+d1 $ struct "<t f>(3, 8)" $ s "bd"
+
+d1 $ struct "<1 0>(3, 8)" $ s "bd" -- 1 and 0 are fine too
+
+d1 $ stitch "t f t t f f t f" "bd" "sd"
+
+d1 $ stitch "[t f <t t*2> [~ t] f <f t> t f, t(3, 8)]" "bd" "sd"
+
+-- Only bd sounding, cause sew is switching patterns,
+-- based on boolean values
+d1 $ s $ sew "t f" "bd" "sd" 
+
+-- Switched in time
+d1 $ s $ sew "t f" "bd" "~ sd" 
+
+-- Both snares
+d1 $ s $ sew "f f" "bd" "sd!2" 
+
+-- Sew works like switch between 2 patterns
+-- and this switch can be patterned too
+d1 $ s $ sew "<t f> f" "bd" "sd*3 cp(3, 8)" 
+
+d1 $ s $ sew "[t f]*4" "bd*8" "sd*3 cp(3, 8)" 
+
+d1 $ chunk 4 (hurry 2) $ n "0 .. 7" # s "stab" # legato 1
+
+d1
+  $ n "0 .. 7"
+  # s "can"
+  # legato 1 # gain 1.3 # speed 0.75 # shape 0.4
+
+-- Sew is cool for blending together 2 patterns:
+d1 $ sew (iter 4 "t f")
+  (chunk 4 (hurry 2) $ n "0 .. 7" # s "stab" # legato 1)
+  (n "0 .. 7" # s "can" # legato 1 # gain 1.3 # speed 0.75 # shape 0.4)
+
+hush

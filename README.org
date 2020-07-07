@@ -40,4 +40,5 @@
 ** DONE [[https://club.tidalcycles.org/t/week-7-lesson-3-composing-tracks-with-the-ur-function/1340][#3 Composing tracks with the "ur" function]] 
 * Week #8 — Functions
 ** DONE [[https://club.tidalcycles.org/t/week-8-lesson-1-shifting-time-beat-rotation-with-and/1352][#1 Shifting time / beat rotation with <~ and ~>]] 
-** TODO [[https://club.tidalcycles.org/t/week-8-lesson-2-binary-patterns-with-struct-stitch-and-sew/1423][#2 Binary patterns with struct, stitch and sew]] 
+** DONE [[https://club.tidalcycles.org/t/week-8-lesson-2-binary-patterns-with-struct-stitch-and-sew/1423][#2 Binary patterns with struct, stitch and sew]] 
+   
