@@ -7,9 +7,9 @@
   - [ ] [[https://club.tidalcycles.org/t/challenge-algoraoke/931/35][Algoraoke]]
   - [ ] [[https://club.tidalcycles.org/t/challenge-drops/1248/2][Drops!]]
 * FOTW
-  - [[https://club.tidalcycles.org/t/fotw-1-iter/1091][Iter]]
-  - [[https://club.tidalcycles.org/t/fotw-2-snowball/1273][Snowball]]
-  - [[https://club.tidalcycles.org/t/fotw-3-weave/1402][Weave]]
+  1. [[https://club.tidalcycles.org/t/fotw-1-iter/1091][Iter]]
+  2. [[https://club.tidalcycles.org/t/fotw-2-snowball/1273][Snowball]]
+  3. [[https://club.tidalcycles.org/t/fotw-3-weave/1402][Weave]]
 * Live Streams
   - [[https://www.youtube.com/watch?list=PL2lW1zNIIwj13SIPHxGs_ApLKWFslYIf6&v=-htjqwWfC9M][Live Streams 1 - 5]]
   - [[https://club.tidalcycles.org/t/live-stream-6-tidal-1-5-0-release-party-and-q-a/1152][6. Tidal 1.5.0 release party and Q+A]]

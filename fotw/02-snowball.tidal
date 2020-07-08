@@ -2,6 +2,59 @@
 -- https://tidalcycles.org/index.php/snowball
 -- https://club.tidalcycles.org/t/fotw-2-snowball/1273
 
-d1 $ s "sd*4"
+d1 $ s "lt mt ht ~"
+
+d1
+  $ qtrigger 1
+  $ snowball 4 (overlay) (hurry 2)
+  $ s "lt mt ht ~"
+
+drawLine
+  $ snowball 4 (overlay) (const $ "a b c d")
+  $ "1 2 3 4"
+
+-- Doesn't overlay itself on 2nd iteration
+snowball' :: Int -> (Pattern a -> Pattern a -> Pattern a) -> (Pattern a -> Pattern a) -> Pattern a -> Pattern a
+snowball' depth combinationFunction f pattern = cat $ take depth $
+  scanl combinationFunction pattern $ drop 1 $ iterate f pattern
+
+d1
+  $ qtrigger 1
+  $ snowball' 4 (overlay) (hurry 2)
+  $ s "lt mt ht ~"
+
+drawLine
+  $ snowball' 4 (overlay) (const $ "a b c d")
+  $ "1 2 3 4"
+
+-- Adding layers together instead of overlaying
+d1
+  $ n (scale "minor" $ snowball 4 (+) (slow 1.5) "0 1 2 3")
+  # s "supermandolin" # legato 3
+
+d1
+  $ n (snowball 4 (+) (slow 1.5) "0 .. 7")
+  # s "supermandolin" # legato 3
+
+d1
+  -- Structure comes only from original
+  $ n (snowball 4 (|+) (slow 1.5) "0 .. 7")
+  # s "supermandolin" # legato 3
+
+d1
+  -- Structure comes only from slowed down
+  $ n (snowball 4 (+|) (slow 1.5) "0 .. 7")
+  # s "supermandolin" # legato 3
+
+d1
+  $ (note $ scale "hexPhrygian" $ "0 . 2 3 ~ . 0 1 . -1 2")
+  # s "gtr" # legato 1
+
+d1
+  $ (note
+     $ scale "hexPhrygian"
+     $ snowball' 4 (+) (slow 2)
+     $ "0 . 2 3 ~ . 0 1 . -1 2")
+  # s "gtr" # legato 1
 
 hush
