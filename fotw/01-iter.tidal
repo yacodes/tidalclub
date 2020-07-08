@@ -1,0 +1,26 @@
+-- Iter
+-- https://tidalcycles.org/index.php/iter
+-- https://club.tidalcycles.org/t/fotw-1-iter/1091
+
+d1 $ n "1 2 3 4" # s "numbers" # legato 1
+
+d1 $ iter 4 $ n "1 2 3 4" # s "numbers" # legato 1
+
+drawLine $ overlay (iter 4 $ "1 2 3 4") $ "1 2 3 4"
+
+drawLine $ overlay (iter 2 $ "1 2 3 4") $ "1 2 3 4"
+
+d1 $ loopAt 1 $ chop 8 $ s "breaks125"
+
+d1 $ iter 2 $ loopAt 1 $ chop 8 $ s "breaks125"
+
+d1 $ iter 2 $ loopAt 1 $ chop 8 $ s "breaks125"
+
+drawLine $ overlay (iter 4 $ "1 2 3 4") $ "1 2 3 4"
+
+-- Shifts in the opposite direction
+drawLine $ overlay (iter' 4 $ "1 2 3 4") $ "1 2 3 4"
+
+d1 $ iter' 4 $ loopAt 1 $ chop 4 $ s "breaks125"
+
+hush
